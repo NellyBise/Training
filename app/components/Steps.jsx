@@ -1,3 +1,4 @@
+'use client'
 import Link from 'next/link'
 
 export default function Steps() {
@@ -12,7 +13,7 @@ export default function Steps() {
             1
           </p>
           <p className="text-center">
-            Choisis le nombre d'exercices de ton circuit
+            Choisis le nombre d&rsquo;exercices de ton circuit
           </p>
         </div>
         <div className="md:w-1/3 flex flex-col items-center gap-8">

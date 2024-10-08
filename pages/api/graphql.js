@@ -1,6 +1,8 @@
 import { ApolloServer, gql } from 'apollo-server-micro'
-import { supabase } from '../../lib/supabase'
 import micro_cors from 'micro-cors'
+import typeDefs from '@/graphql/schema'
+import resolvers from '@/graphql/resolvers'
+import SupabaseAPI from '@/lib/supabase'
 
 // Configuration CORS
 const cors = micro_cors({
@@ -10,24 +12,15 @@ const cors = micro_cors({
   origin: 'https://studio.apollographql.com', // Spécifiez l'origine autorisée
 })
 
-// Résolveurs pour le schéma
-const resolvers = {
-  Query: {
-    exercises: async () => {
-      const { data, error } = await supabase.from('exercises').select('*')
-      if (error) throw new Error(error.message)
-      return data
-    },
-  },
-}
-
 const server = new ApolloServer({
   typeDefs,
   resolvers,
   playground: true,
+  dataSources: () => ({
+    supabaseAPI: new SupabaseAPI(),
+  }),
 })
 
-// Initialiser le serveur Apollo
 const startServer = server.start()
 
 export const config = {

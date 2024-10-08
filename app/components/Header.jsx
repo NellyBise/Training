@@ -48,10 +48,10 @@ export default function Header() {
       >
         <nav
           id="menu"
-          className="flex flex-col items-center h-full space-y-8 text-slate-700 md:text-white py-8 md:h-14 md:mt-0 md:flex-row md:space-x-8"
+          className="flex flex-col items-center h-full space-y-8 text-slate-700 md:text-white py-8 md:mt-0 md:flex-row md:space-x-8"
         >
           <ul className="space-y-16 text-center text-lg md:flex md:items-center md:space-y-0 md:space-x-8">
-            <li className="hover:font-bold duration-300 ease-in-out">
+            <li className="hover:text-lime-400 duration-300 ease-in-out">
               <Link
                 className="border-b-4 border-transparent"
                 href="#"
@@ -60,7 +60,7 @@ export default function Header() {
                 En savoir plus
               </Link>
             </li>
-            <li className="hover:font-bold duration-300 ease-in-out">
+            <li className="hover:text-lime-400 duration-300 ease-in-out">
               <Link
                 className="border-b-4 border-transparent"
                 href="/circuit"

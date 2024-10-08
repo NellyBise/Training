@@ -9,7 +9,7 @@ import { useState } from 'react'
 
 export default function Wizard() {
   const [step, setStep] = useState(1)
-  const [exerciseCount, setExerciseCount] = useState(9)
+  const [exerciseCount, setExerciseCount] = useState(0)
   const [selectedExercises, setSelectedExercises] = useState([])
 
   const nextStep = () => setStep((prev) => prev + 1)
@@ -21,13 +21,14 @@ export default function Wizard() {
   }
 
   return (
-    <div>
+    <div className="bg-slate-50">
       {step === 1 && (
         <Step1 onNext={nextStep} setExerciseCount={setExerciseCount} />
       )}
       {step === 2 && (
         <Step2
           onNext={nextStep}
+          exerciseCount={exerciseCount}
           selectedExercises={selectedExercises}
           setSelectedExercises={setSelectedExercises}
         >
