@@ -8,6 +8,8 @@ const typeDefs = gql`
     id: ID!
     name: String!
     description: String!
+    image_url: String
+    category: String
   }
 `
 

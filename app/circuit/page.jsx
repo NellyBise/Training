@@ -3,7 +3,6 @@
 import Step1 from '../components/Step1'
 import Step2 from '../components/Step2'
 import Step3 from '../components/Step3'
-import Exercises from '../components/test'
 
 import { useState } from 'react'
 
@@ -31,9 +30,7 @@ export default function Wizard() {
           exerciseCount={exerciseCount}
           selectedExercises={selectedExercises}
           setSelectedExercises={setSelectedExercises}
-        >
-          <Exercises />
-        </Step2>
+        />
       )}
       {step === 3 && (
         <Step3 selectedExercises={selectedExercises} onSubmit={handleSubmit} />
