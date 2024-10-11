@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import SelectedCard from './SelectedExercise'
 
 export default function Step3({ selectedExercises, onSubmit }) {
   const [orderedExercises, setOrderedExercises] = useState(selectedExercises)
@@ -15,6 +16,15 @@ export default function Step3({ selectedExercises, onSubmit }) {
   return (
     <div>
       <h2>Étape 3: Organiser l&rsquo;ordre des exercices</h2>
+      <div className="grid grid-cols-6">
+        {selectedExercises.map((exercise) => (
+          <SelectedCard
+            key={exercise.id}
+            exercise={exercise}
+            selectedExercises={selectedExercises}
+          />
+        ))}
+      </div>
       <ul>
         {orderedExercises.map((exercise, index) => (
           <li key={exercise.id}>

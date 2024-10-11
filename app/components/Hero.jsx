@@ -13,11 +13,12 @@ export default function Hero() {
           Choisis tes exercices et crée tes circuits facilement
         </p>
         <Link
-          className="bg-slate-700 p-4 rounded w-max flex gap-4 items-center"
+          className="group bg-slate-700 py-4 px-6 rounded w-max flex gap-2 items-center hover:bg-slate-600 duration-300 ease-in-out"
           href="./circuit"
         >
           Start{' '}
           <svg
+            className="group-hover:translate-x-1 duration-300"
             xmlns="http://www.w3.org/2000/svg"
             width="25"
             height="25"

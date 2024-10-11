@@ -31,7 +31,7 @@ export default function Step1({ onNext, setExerciseCount }) {
         </p>
         <div className="flex gap-8">
           <button
-            className={`p-4 rounded w-max flex gap-4 items-center ${
+            className={`p-4 rounded w-max flex gap-4 items-center hover:bg-lime-400 duration-300 ease-in-out ${
               count === 9 ? 'bg-lime-400' : 'bg-slate-200'
             }`}
             onClick={() => setCount(9)}
@@ -39,7 +39,7 @@ export default function Step1({ onNext, setExerciseCount }) {
             9 exercices
           </button>
           <button
-            className={`p-4 rounded w-max flex gap-4 items-center ${
+            className={`p-4 rounded w-max flex gap-4 items-center hover:bg-lime-400 duration-300 ease-in-out ${
               count === 12 ? 'bg-lime-400' : 'bg-slate-200'
             }`}
             onClick={() => setCount(12)}
@@ -49,7 +49,7 @@ export default function Step1({ onNext, setExerciseCount }) {
 
           <button
             disabled={isDisabled}
-            className="bg-slate-700 p-4 rounded w-max flex gap-4 items-center disabled:cursor-not-allowed disabled:bg-slate-50"
+            className="bg-slate-700 text-white p-4 rounded w-max flex gap-4 items-center disabled:text-slate-500 disabled:cursor-not-allowed disabled:bg-slate-100"
             onClick={() => {
               setExerciseCount(count)
               onNext()
@@ -63,8 +63,8 @@ export default function Step1({ onNext, setExerciseCount }) {
               viewBox="0 0 24 24"
             >
               <path
-                fill="yellowgreen"
-                stroke="yellowgreen"
+                fill={isDisabled ? 'grey' : 'yellowgreen'}
+                stroke={isDisabled ? 'grey' : 'yellowgreen'}
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="1.5"

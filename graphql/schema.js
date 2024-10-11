@@ -10,6 +10,7 @@ const typeDefs = gql`
     description: String!
     image_url: String
     category: String
+    difficulty: Int
   }
 `
 
