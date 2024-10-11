@@ -1,6 +1,6 @@
 import ExerciseCard from './ExerciseCard'
 import SelectedCard from './SelectedExercise'
-import Filters from './Filters'
+import Filters from './ExercicesFilters'
 import exercises from '../src/exercises-fr.json'
 import { useState } from 'react'
 
