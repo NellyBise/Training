@@ -21,15 +21,15 @@ export default function Step1({ onNext, setExerciseCount }) {
     <section className="flex flex-col md:flex-row items-center gap-8 bg-slate-50 py-12 px-8">
       <article className="md:w-1/2 flex flex-col items-center gap-8">
         <p className="text-4xl uppercase font-bold">Step 1</p>
-        <h2 className="text-3xl uppercase">
+        <h2 className="text-3xl uppercase text-center">
           Choisis le nombre d&rsquo;exercices
         </h2>
-        <p>
+        <p className="">
           Conseil : la durée idéale d&rsquo;une séance est de 30 à 60 minutes.
           Pour un circuit de 9 exercices le nombre de répétitions est entre 4 et
           6, pour un circuit de 12 exercices, entre 3 et 5.{' '}
         </p>
-        <div className="flex gap-8">
+        <div className="flex gap-8 flex-wrap justify-center">
           <button
             className={`p-4 rounded w-max flex gap-4 items-center hover:bg-lime-400 duration-300 ease-in-out ${
               count === 9 ? 'bg-lime-400' : 'bg-slate-200'

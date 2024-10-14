@@ -15,7 +15,6 @@ export default function Wizard() {
   const prevStep = () => setStep((prev) => prev - 1)
 
   const handleSubmit = (orderedExercises) => {
-    // Logique pour envoyer le circuit final
     console.log('Circuit créé avec ces exercices:', orderedExercises)
   }
 

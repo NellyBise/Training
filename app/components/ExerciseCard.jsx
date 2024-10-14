@@ -73,7 +73,7 @@ export default function ExerciseCard({
           stroke-width="2"
           stroke="currentColor"
           aria-hidden="true"
-          className="absolute z-10 drop-shadow md:top-3 md:right-3 w-18 md:w-7 text-lime-400 hover:text-lime-500 cursor-pointer"
+          className="absolute z-10 drop-shadow top-3 right-3 w-7 text-lime-400 hover:text-lime-500 cursor-pointer"
         >
           <path
             stroke-linecap="round"

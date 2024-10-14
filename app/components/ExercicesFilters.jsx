@@ -41,6 +41,7 @@ export default function Filters({
   selectedMuscularGroups,
   setSelectedMuscularGroups,
   muscularGroups,
+  setCurrentPage,
 }) {
   const levels = Object.keys(exerciseLevel)
   const equipments = Object.keys(exerciseEquipment)
@@ -48,6 +49,7 @@ export default function Filters({
   const muscularGroupList = Object.keys(muscularGroups)
 
   const toggleFilter = (setFilter, value) => {
+    setCurrentPage(1)
     setFilter((prevSelected) =>
       prevSelected.includes(value)
         ? prevSelected.filter((item) => item !== value)
@@ -56,7 +58,7 @@ export default function Filters({
   }
 
   return (
-    <div className="flex gap-4">
+    <div className="flex flex-wrap gap-4">
       <Filter
         title="Niveau"
         setFilter={setSelectedLevels}

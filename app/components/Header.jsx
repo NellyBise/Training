@@ -32,19 +32,16 @@ export default function Header() {
   }, [])
 
   return (
-    <header className="z-20 sticky top-0 flex justify-between px-4 md:justify-around items-center text-white h-20 bg-[#042138]">
+    <header className="z-20 relative sticky top-0 flex justify-between px-4 md:justify-around items-center text-white h-20 bg-[#042138]">
       <a href="/" className="flex items-center gap-4">
         <Image src={logo} alt="" width={40} height={40} />
         <p className="text-xl text-lime-400 font-bold uppercase">Training</p>
       </a>
 
       <div
-        className={`md:flex md:static md:h-20 md:w-max md:bg-transparent fixed left-0 top-20 w-full h-max bg-slate-50 rounded-b-xl overflow-hidden transform transition-transform duration-300 ease-in-out ${
-          isOpen
-            ? 'translate-y-0 opacity-100 pointer-events-auto'
-            : '-translate-y-full opacity-0 pointer-events-none md:pointer-events-auto md:opacity-100 md:translate-y-0'
+        className={`z-[-1] absolute md:flex md:static md:h-20 md:w-max md:bg-transparent fixed left-0 top-20 w-full h-max bg-white rounded-b-xl overflow-hidden transition-all duration-300 ease-in-out ${
+          isOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
         }`}
-        style={{ zIndex: isOpen ? 10 : -1 }}
       >
         <nav
           id="menu"

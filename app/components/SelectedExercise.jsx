@@ -1,10 +1,6 @@
 import Image from 'next/image'
 
-export default function SelectedCard({
-  exercise,
-  toggleExercise,
-  selectedExercises,
-}) {
+export default function SelectedCard({ exercise, toggleExercise, index }) {
   return (
     <article className="relative border-[1px] p-2 border-black rounded-lg flex flex-col justify-center size-44">
       <div className="flex-grow"></div>
@@ -18,6 +14,9 @@ export default function SelectedCard({
         width={200}
         height={150}
       ></Image>
+      <p className="absolute -top-4 -left-4 size-10 rounded-full font-bold flex justify-center items-center bg-lime-500">
+        {index + 1}
+      </p>
 
       {toggleExercise ? (
         <button onClick={() => toggleExercise(exercise)}>
@@ -25,7 +24,7 @@ export default function SelectedCard({
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             aria-hidden="true"
-            className="absolute z-10 drop-shadow md:top-1.5 md:right-1.5 w-8 md:w-6 text-gray-400 hover:text-gray-500 cursor-pointer"
+            className="absolute z-10 drop-shadow top-1.5 right-1.5 w-6 text-gray-400 hover:text-gray-500 cursor-pointer"
           >
             <path
               fill="#af1212"
