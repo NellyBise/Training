@@ -47,12 +47,12 @@ export default function ExerciseCard({
       </button>
       <div className="flex-grow"></div>
       <div className="flex">
-        {range.map((rangeElem) =>
+        {range.map((rangeElem, index) =>
           difficultyLevel[exercise.level] >= rangeElem ? (
-            <Image key="rangeElem" src={arm} alt="" width={20} height={20} />
+            <Image key={index} src={arm} alt="" width={20} height={20} />
           ) : (
             <Image
-              key="rangeElem"
+              key={`empty-${index}`}
               src={armDisabled}
               alt=""
               width={20}
@@ -70,14 +70,14 @@ export default function ExerciseCard({
           xmlns="http://www.w3.org/2000/svg"
           fill={selectedExercises.includes(exercise) ? 'currentColor' : 'none'}
           viewBox="0 0 24 24"
-          stroke-width="2"
+          strokeWidth="2"
           stroke="currentColor"
           aria-hidden="true"
           className="absolute z-10 drop-shadow top-3 right-3 w-7 text-lime-400 hover:text-lime-500 cursor-pointer"
         >
           <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
             d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z"
           ></path>
         </svg>

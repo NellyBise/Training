@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export default function SelectedCard({ exercise, toggleExercise, index }) {
   return (
-    <article className="relative border-[1px] p-2 border-black rounded-lg flex flex-col justify-center size-44">
+    <article className="relative border-[1px] p-2 border-black rounded-lg bg-white flex flex-col justify-center size-44">
       <div className="flex-grow"></div>
       <h3 className="self-center uppercase text-sm font-bold text-center">
         {exercise.name}
@@ -14,7 +14,11 @@ export default function SelectedCard({ exercise, toggleExercise, index }) {
         width={200}
         height={150}
       ></Image>
-      <p className="absolute -top-4 -left-4 size-10 rounded-full font-bold flex justify-center items-center bg-lime-500">
+      <p
+        className={`${
+          index + 1 ? 'flex' : 'hidden'
+        } absolute -top-4 -left-4 size-10 rounded-full font-bold justify-center items-center bg-lime-500`}
+      >
         {index + 1}
       </p>
 

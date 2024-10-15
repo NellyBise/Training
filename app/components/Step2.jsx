@@ -136,9 +136,9 @@ export default function Step2({
           >
             <path
               fill="currentColor"
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="m7.5.793l4.354 4.353l-.707.708L8 2.707V14H7V2.707L3.854 5.854l-.708-.708z"
-              clip-rule="evenodd"
+              clipRule="evenodd"
             />
           </svg>
         </button>
@@ -155,9 +155,9 @@ export default function Step2({
           >
             <path
               fill="currentColor"
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="m7.5.793l4.354 4.353l-.707.708L8 2.707V14H7V2.707L3.854 5.854l-.708-.708z"
-              clip-rule="evenodd"
+              clipRule="evenodd"
             />
           </svg>
         </button>
@@ -174,7 +174,6 @@ export default function Step2({
               key={exercise.id}
               exercise={exercise}
               toggleExercise={toggleExercise}
-              index={index}
             />
           ))}
           {/* Affichage des cartes vides */}
@@ -200,10 +199,10 @@ export default function Step2({
         >
           <path
             fill={
-              selectedExercises.length <= exerciseCount ? 'grey' : 'yellowgreen'
+              selectedExercises.length < exerciseCount ? 'grey' : 'yellowgreen'
             }
             stroke={
-              selectedExercises.length <= exerciseCount ? 'grey' : 'yellowgreen'
+              selectedExercises.length < exerciseCount ? 'grey' : 'yellowgreen'
             }
             strokeLinecap="round"
             strokeLinejoin="round"
