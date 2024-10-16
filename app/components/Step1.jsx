@@ -1,84 +1,108 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Image from 'next/image'
 import step1 from '../src/2.jpg'
+import Button from './ui/Button'
 
-export default function Step1({ onNext, setExerciseCount }) {
-  const [count, setCount] = useState(0)
-  const [isDisabled, setIsDisabled] = useState(true)
-  useEffect(() => {
-    const checkValues = () => {
-      if (count === 9 || count === 12) {
-        setIsDisabled(false)
-      } else {
-        setIsDisabled(true)
-      }
+export default function Step1({
+  onNext,
+  setExerciseCount,
+  exerciseCount,
+  setSelectedExercises,
+}) {
+  const [count, setCount] = useState(9)
+
+  const handleCountChange = (event) => {
+    if (event.target.value >= 5 && event.target.value <= 15) {
+      setCount(parseInt(event.target.value))
+    } else {
+      setCount(5)
     }
-    checkValues()
-  }, [count])
+  }
 
   return (
     <section className="flex flex-col md:flex-row items-center gap-8 bg-slate-50 py-12 px-8">
       <article className="md:w-1/2 flex flex-col items-center gap-8">
         <p className="text-4xl uppercase font-bold">Step 1</p>
-        <h2 className="text-3xl uppercase text-center">
+        <h2 className="text-3xl uppercase text-center mb-8">
           Choisis le nombre d&rsquo;exercices
         </h2>
-        <p className="">
-          Conseil : la durée idéale d&rsquo;une séance est de 30 à 60 minutes.
-          Pour un circuit de 9 exercices le nombre de répétitions est entre 4 et
-          6, pour un circuit de 12 exercices, entre 3 et 5.{' '}
+        <p className="flex flex-col gap-2">
+          Conseil : Sélectionne le nombre d&rsquo;exercices selon le type
+          d&rsquo;activité que tu as prévu. Pour du circuit training, la
+          recommandation est de 9 ou 12 exercices.
+          <span className="text-blue-500">En savoir plus</span>
         </p>
-        <div className="flex gap-8 flex-wrap justify-center">
-          <button
-            className={`p-4 rounded w-max flex gap-4 items-center hover:bg-lime-400 duration-300 ease-in-out ${
-              count === 9 ? 'bg-lime-400' : 'bg-slate-200'
-            }`}
-            onClick={() => setCount(9)}
-          >
-            9 exercices
-          </button>
-          <button
-            className={`p-4 rounded w-max flex gap-4 items-center hover:bg-lime-400 duration-300 ease-in-out ${
-              count === 12 ? 'bg-lime-400' : 'bg-slate-200'
-            }`}
-            onClick={() => setCount(12)}
-          >
-            12 exercices
-          </button>
 
-          <button
-            disabled={isDisabled}
-            className="bg-slate-700 text-white p-4 rounded w-max flex gap-4 items-center disabled:text-slate-500 disabled:cursor-not-allowed disabled:bg-slate-100"
-            onClick={() => {
+        <div className="flex flex-col items-center gap-12 flex-wrap justify-center">
+          <div className="relative mt-4">
+            <label className="w-full block mb-1 text-sm text-center text-slate-600">
+              Nombre d&rsquo;exercices (5 à 15)
+            </label>
+            <div className="relative">
+              <button
+                id="decreaseButton"
+                className="absolute left-1 top-1 rounded bg-slate-700 p-1.5 border border-transparent text-center text-sm text-white transition-all focus:bg-lime-400 hover:bg-lime-400 focus:text-slate-700 hover:text-slate-700"
+                type="button"
+                onClick={() => {
+                  count > 5 ? setCount(count - 1) : ''
+                }}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  fill="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path d="M3.75 7.25a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5Z" />
+                </svg>
+              </button>
+
+              <input
+                type="number"
+                min="5"
+                max="15"
+                value={count}
+                onChange={handleCountChange}
+                className="w-full bg-white text-center placeholder:text-slate-400 text-slate-700 text-lg border border-slate-200 rounded-md py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+              />
+
+              <button
+                id="increaseButton"
+                className="absolute right-1 top-1 rounded bg-slate-700 p-1.5 border border-transparent text-center text-sm text-white transition-all focus:bg-lime-400 hover:bg-lime-400 focus:text-slate-700 hover:text-slate-700"
+                type="button"
+                onClick={() => {
+                  count < 15 ? setCount(count + 1) : ''
+                }}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  fill="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <Button
+            title="Valider"
+            clickFunction={() => {
+              if (count < exerciseCount) {
+                setSelectedExercises([])
+              }
               setExerciseCount(count)
               onNext()
             }}
-          >
-            Valider{' '}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="25"
-              height="25"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill={isDisabled ? 'grey' : 'yellowgreen'}
-                stroke={isDisabled ? 'grey' : 'yellowgreen'}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1.5"
-                d="M6.906 4.537A.6.6 0 0 0 6 5.053v13.894a.6.6 0 0 0 .906.516l11.723-6.947a.6.6 0 0 0 0-1.032z"
-              />
-            </svg>
-          </button>
+          />
         </div>
       </article>
       <Image
         className="md:w-1/2 rounded-lg"
         src={step1}
         alt=""
-        width={500}
+        width={7999}
         height="auto"
       />
     </section>

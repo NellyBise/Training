@@ -35,7 +35,7 @@ export default function Header() {
     <header className="z-20 relative sticky top-0 flex justify-between px-4 md:justify-around items-center text-white h-20 bg-[#042138]">
       <a href="/" className="flex items-center gap-4">
         <Image src={logo} alt="" width={40} height={40} />
-        <p className="text-xl text-lime-400 font-bold uppercase">Training</p>
+        <p className="text-xl text-lime-400 font-bold uppercase">Train Up</p>
       </a>
 
       <div

@@ -4,7 +4,7 @@ export default function SelectedCard({ exercise, toggleExercise, index }) {
   return (
     <article className="relative border-[1px] p-2 border-black rounded-lg bg-white flex flex-col justify-center size-44">
       <div className="flex-grow"></div>
-      <h3 className="self-center uppercase text-sm font-bold text-center">
+      <h3 className="self-center items-center text-sm font-bold">
         {exercise.name}
       </h3>
       <Image

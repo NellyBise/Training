@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import SelectedCard from './SelectedExercise'
 import { SortableItem } from './SortableItem'
+import GeneratePDF from './GeneratePDF'
 
 import { DndContext, closestCenter } from '@dnd-kit/core'
 import {
@@ -10,7 +11,7 @@ import {
   rectSortingStrategy,
 } from '@dnd-kit/sortable'
 
-export default function Step3({ selectedExercises, onSubmit }) {
+export default function Step3({ selectedExercises, onPrev }) {
   const [orderedExercises, setOrderedExercises] = useState(selectedExercises)
 
   function handleDragEnd(event) {
@@ -26,12 +27,23 @@ export default function Step3({ selectedExercises, onSubmit }) {
     }
   }
 
+  const [title, setTitle] = useState('Mon titre')
+  const handleTitleChange = (event) => {
+    setTitle(event.target.value)
+  }
+  const [description, setDescription] = useState('Description de ma séance')
+  const handleDescriptionChange = (event) => {
+    setDescription(event.target.value)
+  }
+
   return (
     <section>
       <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
         <div className="flex flex-col items-center gap-8 bg-slate-50 py-12 px-8">
           <p className="text-4xl uppercase font-bold">Step 3</p>
-          <h2 className="text-3xl uppercase text-center">Choisis l'ordre</h2>
+          <h2 className="text-3xl uppercase text-center mb-8">
+            Choisis l&rsquo;ordre
+          </h2>
           <SortableContext
             items={orderedExercises}
             strategy={rectSortingStrategy}
@@ -44,28 +56,48 @@ export default function Step3({ selectedExercises, onSubmit }) {
               ))}
             </div>
           </SortableContext>
+          <form className="flex flex-col max-w-[600px] mt-6">
+            <label className="p-2" for="title">
+              Le titre de ta séance
+            </label>
+            <input
+              type="text"
+              className="border-[1px] border-slate-200 rounded p-2"
+              name="title"
+              id="title"
+              value={title}
+              maxlength="20"
+              onChange={handleTitleChange}
+            ></input>
+            <label className="mt-4 p-2" for="description">
+              Ajoute ici toutes les précisions que tu veux : type de séance,
+              durée, répétitions, timing...
+            </label>
+            <textarea
+              className="border-[1px] border-slate-200 rounded p-2"
+              name="description"
+              id="description"
+              value={description}
+              maxlength="200"
+              onChange={handleDescriptionChange}
+              rows="4"
+              cols="50"
+            ></textarea>
+          </form>
 
-          <button
-            onClick={() => onSubmit(orderedExercises)}
-            className="bg-slate-700 text-white p-4 rounded w-max flex gap-4 items-center disabled:text-slate-500 disabled:cursor-not-allowed disabled:bg-slate-100"
-          >
-            Valider{' '}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="25"
-              height="25"
-              viewBox="0 0 24 24"
+          <div className="flex gap-4 mx-auto mt-6">
+            <button
+              className="bg-slate-200 text-black py-4 px-6 rounded w-max flex gap-4 items-center"
+              onClick={onPrev}
             >
-              <path
-                fill="yellowgreen"
-                stroke="yellowgreen"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1.5"
-                d="M6.906 4.537A.6.6 0 0 0 6 5.053v13.894a.6.6 0 0 0 .906.516l11.723-6.947a.6.6 0 0 0 0-1.032z"
-              />
-            </svg>
-          </button>
+              Retour
+            </button>
+            <GeneratePDF
+              orderedExercises={orderedExercises}
+              title={title}
+              description={description}
+            />
+          </div>
         </div>
       </DndContext>
     </section>

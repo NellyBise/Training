@@ -3,12 +3,14 @@ import SelectedCard from './SelectedExercise'
 import Filters from './ExercicesFilters'
 import exercises from '../src/exercises-fr.json'
 import { useState } from 'react'
+import Button from './ui/Button'
 
 export default function Step2({
   onNext,
   exerciseCount,
   selectedExercises,
   setSelectedExercises,
+  onPrev,
 }) {
   const emptyCards = exerciseCount - selectedExercises.length
 
@@ -96,7 +98,9 @@ export default function Step2({
   return (
     <section className="flex flex-col items-center gap-8 bg-slate-50 py-12 px-8">
       <p className="text-4xl uppercase font-bold">Step 2</p>
-      <h2 className="text-3xl uppercase text-center">Choisis tes exercices</h2>
+      <h2 className="text-3xl uppercase text-center mb-8">
+        Choisis tes exercices
+      </h2>
 
       <Filters
         selectedLevels={selectedLevels}
@@ -165,8 +169,7 @@ export default function Step2({
 
       <div>
         <h3 className="uppercase text-xl text-center mx-auto my-12">
-          Aperçu des exercices sélectionnés : {selectedExercises.length} /{' '}
-          {exerciseCount}
+          Exercices sélectionnés : {selectedExercises.length} / {exerciseCount}
         </h3>
         <div className="flex flex-wrap justify-center gap-5 max-w-[1000px]">
           {selectedExercises.map((exercise, index) => (
@@ -185,32 +188,21 @@ export default function Step2({
           ))}
         </div>
       </div>
-      <button
-        onClick={onNext}
-        disabled={selectedExercises.length < exerciseCount}
-        className="bg-slate-700 text-white p-4 rounded w-max flex gap-4 items-center disabled:text-slate-500 disabled:cursor-not-allowed disabled:bg-slate-100"
-      >
-        Valider{' '}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="25"
-          height="25"
-          viewBox="0 0 24 24"
+      <div className="flex gap-4 mx-auto mt-6">
+        <button
+          className="bg-slate-200 text-black py-4 px-6 rounded w-max flex gap-4 items-center"
+          onClick={onPrev}
         >
-          <path
-            fill={
-              selectedExercises.length < exerciseCount ? 'grey' : 'yellowgreen'
-            }
-            stroke={
-              selectedExercises.length < exerciseCount ? 'grey' : 'yellowgreen'
-            }
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="1.5"
-            d="M6.906 4.537A.6.6 0 0 0 6 5.053v13.894a.6.6 0 0 0 .906.516l11.723-6.947a.6.6 0 0 0 0-1.032z"
-          />
-        </svg>
-      </button>
+          Retour
+        </button>
+
+        <Button
+          title="Valider"
+          clickFunction={onNext}
+          disabled={selectedExercises.length < exerciseCount}
+          condition={selectedExercises.length >= exerciseCount}
+        />
+      </div>
     </section>
   )
 }

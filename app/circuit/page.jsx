@@ -14,27 +14,28 @@ export default function Wizard() {
   const nextStep = () => setStep((prev) => prev + 1)
   const prevStep = () => setStep((prev) => prev - 1)
 
-  const handleSubmit = (orderedExercises) => {
-    console.log('Circuit créé avec ces exercices:', orderedExercises)
-  }
-
   return (
     <div className="bg-slate-50">
       {step === 1 && (
-        <Step1 onNext={nextStep} setExerciseCount={setExerciseCount} />
+        <Step1
+          onNext={nextStep}
+          setExerciseCount={setExerciseCount}
+          exerciseCount={exerciseCount}
+          setSelectedExercises={setSelectedExercises}
+        />
       )}
       {step === 2 && (
         <Step2
           onNext={nextStep}
+          onPrev={prevStep}
           exerciseCount={exerciseCount}
           selectedExercises={selectedExercises}
           setSelectedExercises={setSelectedExercises}
         />
       )}
       {step === 3 && (
-        <Step3 selectedExercises={selectedExercises} onSubmit={handleSubmit} />
+        <Step3 selectedExercises={selectedExercises} onPrev={prevStep} />
       )}
-      {step > 1 && <button onClick={prevStep}>Retour</button>}
     </div>
   )
 }
