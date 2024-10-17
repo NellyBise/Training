@@ -5,7 +5,6 @@ export default function GeneratePDF({ orderedExercises, title, description }) {
   const rowsNumber = Math.ceil(orderedExercises.length / 3)
 
   const generate = () => {
-    console.log(description)
     const doc = new jsPDF()
     const maxTitleWidth = 60
     const ymargin = (5 - rowsNumber) * 10
@@ -23,7 +22,7 @@ export default function GeneratePDF({ orderedExercises, title, description }) {
     })
 
     doc.setFontSize(8)
-    doc.text('Programme généré avec Train Up2', 160, 295)
+    doc.text('Programme généré avec Train Up', 160, 295)
     for (let j = 0; j < rowsNumber; j++) {
       for (let i = j * 3; i < (j + 1) * 3; i++) {
         if (orderedExercises[i] !== undefined) {
