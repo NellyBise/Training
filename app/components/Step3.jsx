@@ -31,7 +31,7 @@ export default function Step3({ selectedExercises, onPrev }) {
   const handleTitleChange = (event) => {
     setTitle(event.target.value)
   }
-  const [description, setDescription] = useState('Description de ma séance')
+  const [description, setDescription] = useState('')
   const handleDescriptionChange = (event) => {
     setDescription(event.target.value)
   }
@@ -65,6 +65,7 @@ export default function Step3({ selectedExercises, onPrev }) {
               className="border-[1px] border-slate-200 rounded p-2"
               name="title"
               id="title"
+              placeholder="Mon titre"
               value={title}
               maxlength="20"
               onChange={handleTitleChange}
@@ -78,6 +79,7 @@ export default function Step3({ selectedExercises, onPrev }) {
               name="description"
               id="description"
               value={description}
+              placeholder="Description de ma séance"
               maxlength="200"
               onChange={handleDescriptionChange}
               rows="4"
@@ -87,7 +89,7 @@ export default function Step3({ selectedExercises, onPrev }) {
 
           <div className="flex gap-4 mx-auto mt-6">
             <button
-              className="bg-slate-200 text-black py-4 px-6 rounded w-max flex gap-4 items-center"
+              className="bg-slate-200 text-black py-4 px-6 rounded w-max flex gap-4 items-center duration-300 hover:bg-slate-300"
               onClick={onPrev}
             >
               Retour

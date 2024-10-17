@@ -31,19 +31,22 @@ export default function Step1({
           Conseil : Sélectionne le nombre d&rsquo;exercices selon le type
           d&rsquo;activité que tu as prévu. Pour du circuit training, la
           recommandation est de 9 ou 12 exercices.
-          <span className="text-blue-500">En savoir plus</span>
+          <span className="text-blue-700">En savoir plus</span>
         </p>
 
         <div className="flex flex-col items-center gap-12 flex-wrap justify-center">
           <div className="relative mt-4">
-            <label className="w-full block mb-1 text-sm text-center text-slate-600">
+            <label
+              for="count"
+              className="w-full block mb-1 text-sm text-center text-slate-600"
+            >
               Nombre d&rsquo;exercices (5 à 15)
             </label>
             <div className="relative">
               <button
-                id="decreaseButton"
                 className="absolute left-1 top-1 rounded bg-slate-700 p-1.5 border border-transparent text-center text-sm text-white transition-all focus:bg-lime-400 hover:bg-lime-400 focus:text-slate-700 hover:text-slate-700"
                 type="button"
+                aria-label="Moins"
                 onClick={() => {
                   count > 5 ? setCount(count - 1) : ''
                 }}
@@ -57,20 +60,21 @@ export default function Step1({
                   <path d="M3.75 7.25a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5Z" />
                 </svg>
               </button>
-
               <input
                 type="number"
+                name="count"
+                id="count"
                 min="5"
                 max="15"
                 value={count}
                 onChange={handleCountChange}
-                className="w-full bg-white text-center placeholder:text-slate-400 text-slate-700 text-lg border border-slate-200 rounded-md py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+                className="w-full bg-white text-center pl-2.5 placeholder:text-slate-400 text-slate-700 text-lg border border-slate-200 rounded-md py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
               />
 
               <button
-                id="increaseButton"
                 className="absolute right-1 top-1 rounded bg-slate-700 p-1.5 border border-transparent text-center text-sm text-white transition-all focus:bg-lime-400 hover:bg-lime-400 focus:text-slate-700 hover:text-slate-700"
                 type="button"
+                aria-label="Plus"
                 onClick={() => {
                   count < 15 ? setCount(count + 1) : ''
                 }}

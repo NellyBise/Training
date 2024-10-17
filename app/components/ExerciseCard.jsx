@@ -31,6 +31,28 @@ export default function ExerciseCard({
         width={300}
         height={150}
       ></Image>
+
+      <button
+        onClick={() => toggleExercise(exercise)}
+        disabled={isDisabled}
+        className="disabled:opacity-50 disabled:cursor-not-allowed group "
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill={selectedExercises.includes(exercise) ? 'currentColor' : 'black'}
+          viewBox="0 0 24 24"
+          strokeWidth="2"
+          stroke="currentColor"
+          aria-hidden="true"
+          className="absolute z-10 drop-shadow top-3 right-3 w-7 text-lime-400 hover:text-lime-500 group-focus-visible:text-lime-500 group-focus-visible:outline outline-black outline-2 group-focus-visible:bg-white cursor-pointer"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z"
+          ></path>
+        </svg>
+      </button>
       <h3 className="self-center uppercase font-bold text-lg text-center">
         {exercise.name}
       </h3>
@@ -61,27 +83,6 @@ export default function ExerciseCard({
           )
         )}
       </div>
-      <button
-        onClick={() => toggleExercise(exercise)}
-        disabled={isDisabled}
-        className="disabled:opacity-50 disabled:cursor-not-allowed"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill={selectedExercises.includes(exercise) ? 'currentColor' : 'black'}
-          viewBox="0 0 24 24"
-          strokeWidth="2"
-          stroke="currentColor"
-          aria-hidden="true"
-          className="absolute z-10 drop-shadow top-3 right-3 w-7 text-lime-400 hover:text-lime-500 cursor-pointer"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z"
-          ></path>
-        </svg>
-      </button>
     </article>
   )
 }

@@ -19,10 +19,17 @@ export default function Filter({
       setIsOpen(false)
     }
   }
+  const handleKeyPress = (event) => {
+    if (event.key === 'Escape') {
+      setIsOpen(false)
+    }
+  }
   useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside)
+    document.addEventListener('keydown', handleKeyPress)
     return () => {
       document.removeEventListener('mousedown', handleClickOutside)
+      document.removeEventListener('keydown', handleKeyPress)
     }
   }, [])
 
@@ -30,6 +37,7 @@ export default function Filter({
     <div className="group relative" ref={menuRef}>
       <button
         className="flex gap-3 items-center bg-white border-[1px] border-slate-200 hover:border-black rounded px-2 py-0"
+        aria-label="développer le menu"
         onClick={toggle}
       >
         <h3 className="">{title}</h3>
@@ -63,11 +71,14 @@ export default function Filter({
         {values.map((value) => (
           <label
             key={value}
+            for={value}
             className="flex gap-3 p-3 items-center hover:bg-lime-400"
           >
             <input
               className="size-4"
               type="checkbox"
+              name={value}
+              id={value}
               value={value}
               checked={selectedValues.includes(value)}
               onChange={() => toggleFilter(setFilter, value)}

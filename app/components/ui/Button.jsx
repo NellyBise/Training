@@ -6,7 +6,7 @@ export default function Button({
 }) {
   return (
     <button
-      className="bg-slate-700 text-white p-4 rounded w-max flex gap-4 items-center disabled:text-slate-500 disabled:cursor-not-allowed disabled:bg-slate-100"
+      className="bg-slate-700 text-white p-4 rounded w-max flex gap-4 items-center duration-300 hover:bg-slate-600 disabled:text-slate-500 disabled:cursor-not-allowed disabled:bg-slate-100"
       onClick={clickFunction}
       disabled={disabled}
     >

@@ -130,7 +130,11 @@ export default function Step2({
         ))}
       </div>
       <div className="flex gap-3">
-        <button onClick={handlePrevPage} disabled={currentPage === 1}>
+        <button
+          onClick={handlePrevPage}
+          disabled={currentPage === 1}
+          aria-label="Page précédente"
+        >
           <svg
             className="-rotate-90"
             xmlns="http://www.w3.org/2000/svg"
@@ -149,7 +153,11 @@ export default function Step2({
         <span>
           Page {currentPage} sur {totalPages}
         </span>
-        <button onClick={handleNextPage} disabled={currentPage === totalPages}>
+        <button
+          onClick={handleNextPage}
+          disabled={currentPage === totalPages}
+          aria-label="Page suivante"
+        >
           <svg
             className="rotate-90"
             xmlns="http://www.w3.org/2000/svg"
@@ -190,7 +198,7 @@ export default function Step2({
       </div>
       <div className="flex gap-4 mx-auto mt-6">
         <button
-          className="bg-slate-200 text-black py-4 px-6 rounded w-max flex gap-4 items-center"
+          className="bg-slate-200 text-black py-4 px-6 rounded w-max flex gap-4 items-center duration-300 hover:bg-slate-300"
           onClick={onPrev}
         >
           Retour
