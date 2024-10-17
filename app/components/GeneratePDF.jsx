@@ -7,20 +7,23 @@ export default function GeneratePDF({ orderedExercises, title, description }) {
   const generate = () => {
     console.log(description)
     const doc = new jsPDF()
-    const maxWidth = 60
+    const maxTitleWidth = 60
     const ymargin = (5 - rowsNumber) * 10
     const mytitle = title
-    const lines = description.split('\n')
     let yPosition = 20
+    const maxWidth = 180
+    const paragraphs = description.split('\n')
 
     doc.text(mytitle, 100 - title.length * 1.1, 10)
     doc.setFontSize(12)
-    lines.forEach((line) => {
-      doc.text(line, 100 - line.length * 0.8, yPosition)
-      yPosition += 6
+    paragraphs.forEach((paragraph) => {
+      const lines = doc.splitTextToSize(paragraph, maxWidth)
+      doc.text(lines, 10, yPosition)
+      yPosition += lines.length * 6
     })
+
     doc.setFontSize(8)
-    doc.text('Programme généré avec Train Up', 160, 295)
+    doc.text('Programme généré avec Train Up2', 160, 295)
     for (let j = 0; j < rowsNumber; j++) {
       for (let i = j * 3; i < (j + 1) * 3; i++) {
         if (orderedExercises[i] !== undefined) {
@@ -44,10 +47,10 @@ export default function GeneratePDF({ orderedExercises, title, description }) {
           doc.addImage(
             orderedExercises[i].images[0],
             'JPG',
-            15 + (i - j * 3) * 64,
+            13 + (i - j * 3) * 64,
             ymargin + 56 + j * 52,
-            25,
-            15,
+            30,
+            18,
             orderedExercises[i].name + '_image1',
             'FAST',
             10
@@ -56,14 +59,17 @@ export default function GeneratePDF({ orderedExercises, title, description }) {
             orderedExercises[i].images[1],
             'JPG',
             39 + (i - j * 3) * 64,
-            ymargin + 52 + j * 52,
-            25,
-            15,
+            ymargin + 51 + j * 52,
+            30,
+            18,
             orderedExercises[i].name + '_image2',
             'FAST',
             -10
           )
-          const lines = doc.splitTextToSize(orderedExercises[i].name, maxWidth)
+          const lines = doc.splitTextToSize(
+            orderedExercises[i].name,
+            maxTitleWidth
+          )
           doc.setFontSize(12)
           doc.text(
             lines,
