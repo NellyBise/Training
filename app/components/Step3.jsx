@@ -27,7 +27,7 @@ export default function Step3({ selectedExercises, onPrev }) {
     }
   }
 
-  const [title, setTitle] = useState('Mon titre')
+  const [title, setTitle] = useState('')
   const handleTitleChange = (event) => {
     setTitle(event.target.value)
   }
@@ -57,7 +57,7 @@ export default function Step3({ selectedExercises, onPrev }) {
             </div>
           </SortableContext>
           <form className="flex flex-col w-full md:max-w-[600px] mt-6">
-            <label className="p-2" for="title">
+            <label className="p-2" htmlFor="title">
               Le titre de ta séance
             </label>
             <input
@@ -70,7 +70,7 @@ export default function Step3({ selectedExercises, onPrev }) {
               maxlength="20"
               onChange={handleTitleChange}
             ></input>
-            <label className="mt-4 p-2 flex flex-wrap" for="description">
+            <label className="mt-4 p-2 flex flex-wrap" htmlFor="description">
               Ajoute ici toutes les précisions que tu veux : type de séance,
               durée, répétitions, timing...
             </label>

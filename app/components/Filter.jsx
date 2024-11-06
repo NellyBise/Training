@@ -71,7 +71,7 @@ export default function Filter({
         {values.map((value) => (
           <label
             key={value}
-            for={value}
+            htmlFor={value}
             className="flex gap-3 p-3 items-center hover:bg-lime-400"
           >
             <input

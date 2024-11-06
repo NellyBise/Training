@@ -35,7 +35,7 @@ export default function ExerciseCard({
       <button
         onClick={() => toggleExercise(exercise)}
         disabled={isDisabled}
-        className="disabled:opacity-50 disabled:cursor-not-allowed group "
+        className="absolute z-10 top-3 right-3 w-7 disabled:opacity-50 disabled:cursor-not-allowed group "
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -44,7 +44,7 @@ export default function ExerciseCard({
           strokeWidth="2"
           stroke="currentColor"
           aria-hidden="true"
-          className="absolute z-10 drop-shadow top-3 right-3 w-7 text-lime-400 hover:text-lime-500 group-focus-visible:text-lime-500 group-focus-visible:outline outline-black outline-2 group-focus-visible:bg-white cursor-pointer"
+          className="drop-shadow text-lime-400 hover:text-lime-500 cursor-pointer"
         >
           <path
             strokeLinecap="round"

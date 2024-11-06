@@ -37,7 +37,7 @@ export default function Step1({
         <div className="flex flex-col items-center gap-12 flex-wrap justify-center">
           <div className="relative mt-4">
             <label
-              for="count"
+              htmlFor="count"
               className="w-full block mb-1 text-sm text-center text-slate-600"
             >
               Nombre d&rsquo;exercices (5 à 15)

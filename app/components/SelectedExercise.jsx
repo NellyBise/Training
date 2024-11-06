@@ -3,7 +3,7 @@ import Image from 'next/image'
 export default function SelectedCard({ exercise, toggleExercise, index }) {
   return (
     <article className="relative border-[1px] p-2 border-black rounded-lg bg-white flex flex-col justify-center size-44">
-      <h3 className="flex items-center h-full text-center text-sm font-bold">
+      <h3 className="flex items-center justify-center h-full text-center text-sm font-bold">
         {exercise.name}
       </h3>
       <Image
@@ -22,12 +22,15 @@ export default function SelectedCard({ exercise, toggleExercise, index }) {
       </p>
 
       {toggleExercise ? (
-        <button className="group" onClick={() => toggleExercise(exercise)}>
+        <button
+          className="group absolute z-10 top-1.5 right-1.5 w-6 "
+          onClick={() => toggleExercise(exercise)}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             aria-hidden="true"
-            className="absolute z-10 bg-white/70 rounded-full top-1.5 right-1.5 w-6 duration-300 hover:bg-slate-200 group-focus-visible:bg-slate-200 group-focus-visible:outline outline-black outline-2 cursor-pointer"
+            className="bg-white/70 rounded-full duration-300 hover:bg-slate-200 cursor-pointer"
           >
             <path
               fill="#af1212"
