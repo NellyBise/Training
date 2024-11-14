@@ -4,6 +4,7 @@ import Image from 'next/image'
 import logo from '../src/green-circle.png'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Button from './ui/Button'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -69,6 +70,24 @@ export default function Header() {
           </ul>
         </nav>
       </div>
+      <ul className="flex gap-4">
+        <li>
+          <Link
+            className="bg-lime-500 text-[#042138] p-3 rounded w-max flex gap-4 items-center self-center duration-300 hover:bg-lime-300 disabled:text-slate-500 disabled:cursor-not-allowed disabled:bg-slate-100"
+            href="/inscription"
+          >
+            S&rsquo;inscrire
+          </Link>
+        </li>
+        <li>
+          <Link
+            className="bg-slate-700 text-white p-3 rounded w-max flex gap-4 items-center self-center duration-300 hover:bg-slate-600 disabled:text-slate-500 disabled:cursor-not-allowed disabled:bg-slate-100"
+            href="/login"
+          >
+            Se connecter
+          </Link>
+        </li>
+      </ul>
       <div className="md:hidden">
         <button
           className="w-10 h-10 relative bg-slate-700 rounded"
