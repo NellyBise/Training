@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom'
 import { render, screen, fireEvent } from '@testing-library/react'
 
-import Step1 from '../components/Step1'
+import Step1 from '../app/components/Step1'
 
 describe('Step1', () => {
   test('initialize count at 9 and increment one by one until 15 when plus button is clicked', () => {

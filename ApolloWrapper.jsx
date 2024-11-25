@@ -10,7 +10,8 @@ import {
 
 function makeClient() {
   const httpLink = new HttpLink({
-    uri: 'http://localhost:3000/api/graphql',
+    uri:
+      'http://localhost:3000/api/graphql' || 'https://trainup-rosy.vercel.app/',
     fetchOptions: { cache: 'no-store' },
   })
 

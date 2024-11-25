@@ -9,7 +9,7 @@ const cors = micro_cors({
   allowMethods: ['GET', 'POST', 'OPTIONS'],
   allowHeaders: ['Content-Type', 'Authorization'],
   allowCredentials: true,
-  origin: 'https://studio.apollographql.com', // Spécifiez l'origine autorisée
+  origin: 'https://studio.apollographql.com',
 })
 
 const server = new ApolloServer({
@@ -17,7 +17,7 @@ const server = new ApolloServer({
   resolvers,
   playground: true,
   dataSources: () => ({
-    supabaseAPI: new SupabaseAPI(),
+    SupabaseAPI: new SupabaseAPI(),
   }),
 })
 
@@ -29,9 +29,7 @@ export const config = {
   },
 }
 
-// Utiliser le gestionnaire CORS avec votre handler
 export default cors(async function handler(req, res) {
-  // Gérer les requêtes OPTIONS
   if (req.method === 'OPTIONS') {
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
     res.setHeader(
@@ -42,6 +40,6 @@ export default cors(async function handler(req, res) {
     return res.end()
   }
 
-  await startServer // Assurez-vous que le serveur est démarré avant de le manipuler
+  await startServer
   return server.createHandler({ path: '/api/graphql' })(req, res)
 })

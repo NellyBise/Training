@@ -3,6 +3,8 @@ import { useState } from 'react'
 import SelectedCard from './SelectedExercise'
 import { SortableItem } from './SortableItem'
 import GeneratePDF from './GeneratePDF'
+import { supabaseAPI } from '@/lib/supabase'
+import Button from './ui/Button'
 
 import { DndContext, closestCenter } from '@dnd-kit/core'
 import {
@@ -21,7 +23,6 @@ export default function Step3({ selectedExercises, onPrev }) {
       setOrderedExercises((items) => {
         const oldIndex = items.findIndex((item) => item.id === active.id)
         const newIndex = items.findIndex((item) => item.id === over.id)
-
         return arrayMove(items, oldIndex, newIndex)
       })
     }
@@ -34,6 +35,38 @@ export default function Step3({ selectedExercises, onPrev }) {
   const [description, setDescription] = useState('')
   const handleDescriptionChange = (event) => {
     setDescription(event.target.value)
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+
+    try {
+      const {
+        data: { user },
+        error: userError,
+      } = await supabaseAPI.auth.getUser()
+      if (userError) throw new Error(userError.message)
+      if (!user) throw new Error('Utilisateur non connecté')
+
+      const user_id = user.id
+      const exercisesNumber = orderedExercises.length
+
+      const { data, error } = await supabaseAPI.from('training').insert([
+        {
+          title,
+          description,
+          orderedExercises,
+          exercisesNumber,
+          user_id,
+        },
+      ])
+      if (error) throw new Error(error.message)
+
+      alert('Training enregistré avec succès !')
+    } catch (err) {
+      console.error('Erreur lors de la soumission :', err.message)
+      alert(`Erreur : ${err.message}`)
+    }
   }
 
   return (
@@ -56,7 +89,10 @@ export default function Step3({ selectedExercises, onPrev }) {
               ))}
             </div>
           </SortableContext>
-          <form className="flex flex-col w-full md:max-w-[600px] mt-6">
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col w-full md:max-w-[600px] mt-6"
+          >
             <label className="p-2" htmlFor="title">
               Le titre de ta séance
             </label>
@@ -67,7 +103,7 @@ export default function Step3({ selectedExercises, onPrev }) {
               id="title"
               placeholder="Mon titre"
               value={title}
-              maxlength="20"
+              maxLength="20"
               onChange={handleTitleChange}
             ></input>
             <label className="mt-4 p-2 flex flex-wrap" htmlFor="description">
@@ -75,16 +111,17 @@ export default function Step3({ selectedExercises, onPrev }) {
               durée, répétitions, timing...
             </label>
             <textarea
-              className="border-[1px] border-slate-200 rounded p-2"
+              className="border-[1px] border-slate-200 rounded p-2 mb-12"
               name="description"
               id="description"
               value={description}
               placeholder="Description de ma séance"
-              maxlength="200"
+              maxLength="200"
               onChange={handleDescriptionChange}
               rows="4"
               cols="50"
             ></textarea>
+            <Button disabled={title === ''} title="Enregistrer" type="submit" />
           </form>
 
           <div className="flex gap-4 mx-auto mt-6">

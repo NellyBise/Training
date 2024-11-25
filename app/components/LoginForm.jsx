@@ -1,19 +1,21 @@
 'use client'
 
 import { useState } from 'react'
-import supabase from '@/lib/supabase'
+import { supabaseAPI } from '@/lib/supabase'
 import Button from './ui/Button'
+import { useRouter } from 'next/navigation'
 
 function LoginForm({ action }) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState(null)
+  const router = useRouter()
 
   const handleLogin = async (e) => {
     e.preventDefault()
     setError(null)
 
-    const { error } = await supabase.auth.signInWithPassword({
+    const { error } = await supabaseAPI.auth.signInWithPassword({
       email,
       password,
     })
@@ -21,7 +23,7 @@ function LoginForm({ action }) {
     if (error) {
       setError(error.message)
     } else {
-      alert('Connexion réussie !')
+      router.push('/profile')
     }
   }
 
@@ -29,7 +31,7 @@ function LoginForm({ action }) {
     e.preventDefault()
     setError(null)
 
-    const { data, error } = await supabase.auth.signUp({
+    const { data, error } = await supabaseAPI.auth.signUp({
       email,
       password,
     })
@@ -47,9 +49,12 @@ function LoginForm({ action }) {
     e.preventDefault()
     setError(null)
 
-    const { data, error } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: 'http://localhost:3000/reset',
-    })
+    const { data, error } = await supabaseAPI.auth.resetPasswordForEmail(
+      email,
+      {
+        redirectTo: 'https://trainup-rosy.vercel.app/reset',
+      }
+    )
 
     if (error) {
       setError(error.message)
@@ -61,7 +66,7 @@ function LoginForm({ action }) {
   const handleNewPassword = async (e) => {
     e.preventDefault()
 
-    const { data, error } = await supabase.auth.updateUser({
+    const { data, error } = await SupabaseAPI.auth.updateUser({
       password: password,
     })
     if (error) {
