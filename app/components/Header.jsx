@@ -155,7 +155,7 @@ export default function Header() {
               className="hover:text-lime-400 duration-300 ease-in-out"
               onClick={handleSignOut}
             >
-              Déconnection
+              Déconnexion
             </button>
           ) : (
             <Link
