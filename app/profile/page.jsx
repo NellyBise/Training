@@ -87,17 +87,20 @@ export default function Profile() {
 
   return (
     <section className="flex flex-col items-center gap-8 bg-slate-50 py-12 px-8">
-      <h1 className="text-4xl uppercase font-bold"> Tableau de Bord </h1>
+      <h1 className="text-4xl uppercase font-bold text-center">
+        {' '}
+        Tableau de Bord{' '}
+      </h1>
       <h2 className="text-3xl uppercase text-center mb-8">Mes circuits</h2>
       {trainings.length > 0 ? (
-        <table className="border-2 border-black">
-          <thead>
+        <table className="border-2 border-black text-sm md: text-base">
+          <thead className="h-8">
             <tr>
               <th className="px-2 border-[1px] border-black" scope="col">
                 Nom
               </th>
               <th
-                className="px-2 max-w-40 border-[1px] border-black"
+                className="px-2 max-w-40 border-[1px] border-black hidden md:table-cell"
                 scope="col"
               >
                 Description
@@ -106,7 +109,7 @@ export default function Profile() {
                 Date
               </th>
               <th className="px-2 border-[1px] border-black" scope="col">
-                Voir pdf
+                Voir PDF
               </th>
               <th className="px-2 border-[1px] border-black" scope="col">
                 Supprimer
@@ -115,15 +118,20 @@ export default function Profile() {
           </thead>
           <tbody>
             {trainings.map((training) => (
-              <tr className="h-12" key={training.id}>
+              <tr className="min-h-12" key={training.id}>
                 <th className="p-2 border-[1px] border-black" scope="row">
                   {training.title}
                 </th>
-                <td className="p-2 max-w-96 overflow-hidden border-[1px] border-black">
+                <td className="p-2 max-w-96 overflow-hidden border-[1px] border-black hidden md:table-cell">
                   {training.description}
                 </td>
                 <td className="p-2 border-[1px] border-black">
-                  {training.created_at.substr(0, 10)}
+                  {training.created_at
+                    .substr(4, 6)
+                    .split('-')
+                    .reverse()
+                    .join('/')}
+                  {training.created_at.substr(2, 2)}
                 </td>
                 <td
                   className="p-2 border-[1px] text-red-500 border-black"
