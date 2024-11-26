@@ -1400,7 +1400,7 @@
     "force": "push",
     "level": "beginner",
     "mechanic": "compound",
-    "equipment": "body only",
+    "equipment": "other",
     "primaryMuscles": ["triceps"],
     "secondaryMuscles": ["chest", "shoulders"],
     "instructions": [
@@ -1418,7 +1418,7 @@
     "force": "push",
     "level": "intermediate",
     "mechanic": "compound",
-    "equipment": "body only",
+    "equipment": "other",
     "primaryMuscles": ["quadriceps"],
     "secondaryMuscles": ["calves", "glutes", "hamstrings"],
     "instructions": [
@@ -1830,7 +1830,7 @@
     "primaryMuscles": ["triceps"],
     "secondaryMuscles": [],
     "instructions": [
-      "Placez une barre dans un rack à hauteur de poitrine.",
+      "Placez une barre dans un rack à hauteur de poitrine ou utilisez un mur.",
       "Debout, saisissez la barre à la largeur des épaules et reculez d'un ou deux mètres, les pieds joints et les bras tendus de manière à vous appuyer sur la barre. Ce sera votre position de départ.",
       "Commencez par fléchir le coude en vous abaissant vers la barre.",
       "Faites une pause, puis inversez le mouvement en étendant les coudes.",
@@ -3205,7 +3205,7 @@
     "force": "pull",
     "level": "beginner",
     "mechanic": "compound",
-    "equipment": "body only",
+    "equipment": "other",
     "primaryMuscles": ["lats"],
     "secondaryMuscles": ["biceps", "forearms", "middle back"],
     "instructions": [
@@ -3592,7 +3592,7 @@
     "force": "push",
     "level": "intermediate",
     "mechanic": "compound",
-    "equipment": "body only",
+    "equipment": "dumbbell",
     "primaryMuscles": ["triceps"],
     "secondaryMuscles": ["abdominals", "chest", "shoulders"],
     "instructions": [
@@ -3819,7 +3819,7 @@
     "force": "pull",
     "level": "beginner",
     "mechanic": "isolation",
-    "equipment": "body only",
+    "equipment": "exercise ball",
     "primaryMuscles": ["abdominals"],
     "secondaryMuscles": [],
     "instructions": [
@@ -4017,7 +4017,7 @@
     "force": "pull",
     "level": "intermediate",
     "mechanic": "isolation",
-    "equipment": "body only",
+    "equipment": "other",
     "primaryMuscles": ["abdominals"],
     "secondaryMuscles": [],
     "instructions": [
@@ -4123,7 +4123,7 @@
     "force": "pull",
     "level": "beginner",
     "mechanic": "compound",
-    "equipment": "body only",
+    "equipment": "other",
     "primaryMuscles": ["abdominals"],
     "secondaryMuscles": [],
     "instructions": [
@@ -4161,7 +4161,7 @@
     "force": "pull",
     "level": "beginner",
     "mechanic": "compound",
-    "equipment": "body only",
+    "equipment": "other",
     "primaryMuscles": ["abdominals"],
     "secondaryMuscles": [],
     "instructions": [
@@ -4284,7 +4284,7 @@
     "force": "push",
     "level": "beginner",
     "mechanic": "compound",
-    "equipment": "body only",
+    "equipment": "other",
     "primaryMuscles": ["triceps"],
     "secondaryMuscles": ["chest", "shoulders"],
     "instructions": [
@@ -5519,7 +5519,7 @@
     "id": "Flat_Bench_Cable_Flyes"
   },
   {
-    "name": "Banc plat avec pieds rétractables",
+    "name": "Relevés de jambes fléchies",
     "force": "pull",
     "level": "beginner",
     "mechanic": "compound",
@@ -5538,7 +5538,7 @@
     "id": "Flat_Bench_Leg_Pull-In"
   },
   {
-    "name": "Relevés de jambes allongés sur banc plat",
+    "name": "Relevés de jambes",
     "force": "pull",
     "level": "beginner",
     "mechanic": "isolation",
@@ -5546,7 +5546,7 @@
     "primaryMuscles": ["abdominals"],
     "secondaryMuscles": [],
     "instructions": [
-      "Allongez-vous sur le dos à plat sur un banc et les jambes étendues devant vous à l'extrémité.",
+      "Allongez-vous sur le dos à plat sur un banc ou un tapis et les jambes étendues devant vous à l'extrémité.",
       "Placez vos mains soit sous vos fessiers, paumes vers le bas, soit sur les côtés en tenant le banc. Ce sera votre position de départ.",
       "En gardant les jambes tendues, aussi droites que possible, les genoux légèrement pliés mais verrouillés, levez les jambes jusqu'à ce qu'elles forment un angle de 90 degrés avec le sol. Expirez pendant que vous effectuez cette partie du mouvement et maintenez la contraction en haut pendant une seconde.",
       "Maintenant, pendant que vous inspirez, abaissez lentement vos jambes jusqu’à la position de départ."
@@ -5646,7 +5646,7 @@
     "primaryMuscles": ["glutes"],
     "secondaryMuscles": ["hamstrings"],
     "instructions": [
-      "Sur un banc plat, allongez-vous face contre terre avec les hanches sur le bord du banc, les jambes droites avec les orteils bien au-dessus du sol et les bras sur le dessus du banc tenant le bord avant.",
+      "Sur un banc plat ou sur un tapis, allongez-vous face contre terre avec les hanches sur le bord du banc, les jambes droites avec les orteils bien au-dessus du sol et les bras sur le dessus du banc tenant le bord avant.",
       "Contractez vos fessiers et vos ischio-jambiers et tendez les jambes jusqu'à ce qu'elles soient au niveau des hanches. Ce sera votre position de départ.",
       "Commencez le mouvement en soulevant la jambe gauche plus haut que la jambe droite.",
       "Abaissez ensuite la jambe gauche tout en soulevant la jambe droite.",
@@ -6103,7 +6103,7 @@
     "force": "push",
     "level": "beginner",
     "mechanic": "compound",
-    "equipment": "body only",
+    "equipment": "other",
     "primaryMuscles": ["glutes"],
     "secondaryMuscles": ["hamstrings"],
     "instructions": [
@@ -6203,7 +6203,7 @@
     "id": "Groin_and_Back_Stretch"
   },
   {
-    "name": "Aînés",
+    "name": "Demi burpees",
     "force": "pull",
     "level": "intermediate",
     "mechanic": "compound",
@@ -6473,7 +6473,7 @@
     "force": "pull",
     "level": "expert",
     "mechanic": "isolation",
-    "equipment": "body only",
+    "equipment": "other",
     "primaryMuscles": ["abdominals"],
     "secondaryMuscles": [],
     "instructions": [
@@ -6491,7 +6491,7 @@
     "force": "pull",
     "level": "expert",
     "mechanic": "compound",
-    "equipment": "body only",
+    "equipment": "other",
     "primaryMuscles": ["abdominals"],
     "secondaryMuscles": [],
     "instructions": [
@@ -6724,7 +6724,7 @@
     "force": "pull",
     "level": "intermediate",
     "mechanic": "compound",
-    "equipment": "body only",
+    "equipment": "other",
     "primaryMuscles": ["lower back"],
     "secondaryMuscles": ["glutes", "hamstrings"],
     "instructions": [
@@ -7034,7 +7034,7 @@
     "primaryMuscles": ["chest"],
     "secondaryMuscles": ["shoulders", "triceps"],
     "instructions": [
-      "Tenez-vous debout face à un banc ou à une plate-forme surélevée robuste. Placez vos mains sur le bord du banc ou de la plate-forme, à une distance légèrement supérieure à la largeur des épaules.",
+      "Tenez-vous debout face à un banc ou à une plate-forme surélevée robuste (comme une marche). Placez vos mains sur le bord du banc ou de la plate-forme, à une distance légèrement supérieure à la largeur des épaules.",
       "Positionnez l'avant-pied en arrière du banc ou de la plate-forme avec les bras et le corps droits. Les bras doivent être perpendiculaires au corps. En gardant le corps droit, abaissez la poitrine jusqu'au bord de la boîte ou de la plate-forme en pliant les bras.",
       "Poussez le corps vers le haut jusqu'à ce que les bras soient étendus. Répétez."
     ],
@@ -7051,7 +7051,7 @@
     "primaryMuscles": ["triceps"],
     "secondaryMuscles": ["chest", "shoulders"],
     "instructions": [
-      "Tenez-vous face à une barre de machine Smith ou à une plate-forme surélevée robuste à une hauteur appropriée.",
+      "Tenez-vous face à une barre de machine Smith ou à une plate-forme surélevée robuste à une hauteur appropriée, vous pouvez utiliser un mur.",
       "Placez vos mains l’une à côté de l’autre sur la barre.",
       "Placez vos pieds en arrière de la barre, les bras et le corps droits. Ce sera votre position de départ.",
       "En gardant votre corps droit, abaissez votre poitrine jusqu'à la barre en pliant les bras.",
@@ -7094,7 +7094,7 @@
     "primaryMuscles": ["chest"],
     "secondaryMuscles": ["abdominals", "shoulders", "triceps"],
     "instructions": [
-      "Tenez-vous face à une barre de machine Smith ou à une plate-forme surélevée robuste à une hauteur appropriée.",
+      "Tenez-vous face à une barre de machine Smith ou à une plate-forme surélevée robuste à une hauteur appropriée, vous pouvez utiliser une chaise contre un mur.",
       "Placez vos mains sur la barre, à peu près à la largeur des épaules.",
       "Placez vos pieds en arrière de la barre, les bras et le corps droits. Ce sera votre position de départ.",
       "En gardant votre corps droit, abaissez votre poitrine jusqu'à la barre en pliant les bras.",
@@ -7109,7 +7109,7 @@
     "force": "push",
     "level": "beginner",
     "mechanic": "compound",
-    "equipment": "body only",
+    "equipment": "other",
     "primaryMuscles": ["chest"],
     "secondaryMuscles": ["abdominals", "shoulders", "triceps"],
     "instructions": [
@@ -7135,7 +7135,7 @@
     "primaryMuscles": ["chest"],
     "secondaryMuscles": ["abdominals", "shoulders", "triceps"],
     "instructions": [
-      "Tenez-vous face à une barre de machine Smith ou à une plate-forme surélevée robuste à une hauteur appropriée.",
+      "Tenez-vous face à une barre de machine Smith ou à une plate-forme surélevée robuste à une hauteur appropriée, vous pouvez utiliser une chaise ou un mur.",
       "Placez vos mains sur la barre, avec vos mains plus larges que la largeur des épaules.",
       "Placez vos pieds en arrière de la barre, les bras et le corps droits. Vos bras doivent être perpendiculaires au corps. Ce sera votre position de départ.",
       "En gardant votre corps droit, abaissez votre poitrine jusqu'à la barre en pliant les bras.",
@@ -9592,7 +9592,7 @@
     "force": "pull",
     "level": "intermediate",
     "mechanic": "compound",
-    "equipment": "body only",
+    "equipment": "machine",
     "primaryMuscles": ["hamstrings"],
     "secondaryMuscles": ["calves", "glutes", "lower back"],
     "instructions": [
@@ -11374,7 +11374,7 @@
     "force": "pull",
     "level": "beginner",
     "mechanic": "compound",
-    "equipment": "body only",
+    "equipment": "other",
     "primaryMuscles": ["lats"],
     "secondaryMuscles": ["biceps", "middle back"],
     "instructions": [
@@ -17142,7 +17142,7 @@
     "force": "pull",
     "level": "beginner",
     "mechanic": "compound",
-    "equipment": "body only",
+    "equipment": "other",
     "primaryMuscles": ["lats"],
     "secondaryMuscles": ["biceps", "middle back", "shoulders"],
     "instructions": [
@@ -17259,7 +17259,7 @@
     "force": "pull",
     "level": "beginner",
     "mechanic": "isolation",
-    "equipment": "medicine ball",
+    "equipment": "other",
     "primaryMuscles": ["abdominals"],
     "secondaryMuscles": [],
     "instructions": [
@@ -17480,7 +17480,7 @@
     "force": "pull",
     "level": "intermediate",
     "mechanic": "compound",
-    "equipment": "body only",
+    "equipment": "other",
     "primaryMuscles": ["lats"],
     "secondaryMuscles": ["biceps", "middle back", "shoulders"],
     "instructions": [
@@ -17560,7 +17560,7 @@
     "force": "pull",
     "level": "beginner",
     "mechanic": "compound",
-    "equipment": "body only",
+    "equipment": "other",
     "primaryMuscles": ["abdominals"],
     "secondaryMuscles": [],
     "instructions": [

@@ -19,11 +19,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
-      <body className={poppins.className}>
+      <body
+        className={`${poppins.className} min-h-screen scroll-smooth flex flex-col`}
+      >
         <Header />
         <main>
           <ApolloWrapper>{children}</ApolloWrapper>
         </main>
+        <div className="flex-grow bg-slate-50"></div>
         <Footer />
       </body>
     </html>

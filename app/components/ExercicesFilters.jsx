@@ -77,7 +77,7 @@ export default function Filters({
         displayName={exerciseEquipment}
         toggleFilter={toggleFilter}
       />
-      <Filter
+      {/*<Filter
         title="Type d'exercice"
         setFilter={setSelectedCategories}
         selectedValues={selectedCategories}
@@ -85,7 +85,7 @@ export default function Filters({
         filter="category"
         displayName={exerciseCategory}
         toggleFilter={toggleFilter}
-      />
+      />*/}
       <Filter
         title="Groupe musculaire"
         setFilter={setSelectedMuscularGroups}

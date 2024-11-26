@@ -40,14 +40,14 @@ export default function Filter({
         aria-label="développer le menu"
         onClick={toggle}
       >
-        <h3 className="">{title}</h3>
-        <p
+        {title}
+        <span
           className={`text-white bg-black rounded-full size-6 justify-center items-center ${
             selectedValues.length === 0 ? 'hidden' : 'flex'
           }`}
         >
           {selectedValues.length}
-        </p>
+        </span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="17.5"

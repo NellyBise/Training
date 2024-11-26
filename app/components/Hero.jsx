@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import cover from '../src/cover.png'
+import cover from '../src/cover.webp'
 import Button from './ui/Button'
 
 export default function Hero() {
@@ -14,11 +14,11 @@ export default function Hero() {
           Choisis tes exercices et crée tes circuits facilement
         </p>
         <Link href="./circuit">
-          <Button title="Start" />
+          <Button title="Commencer" />
         </Link>
       </div>
       <div className="md:w-3/5">
-        <Image src={cover} alt="" />
+        <Image src={cover} alt="" width={2491} height="auto" priority />
       </div>
     </section>
   )

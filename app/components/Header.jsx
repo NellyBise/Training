@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import logo from '../src/green-circle.png'
+import logo from '../src/logo.png'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { supabaseAPI } from '@/lib/supabase'
@@ -86,14 +86,18 @@ export default function Header() {
       </a>
 
       <div
-        className={`z-[-1] absolute md:flex md:flex-row-reverse md:static md:h-20 md:w-max md:bg-transparent fixed left-0 top-20 w-full h-max bg-white rounded-b-xl overflow-hidden transition-all duration-300 ease-in-out ${
+        className={`z-[-1] min-h-screen absolute md:flex md:flex-row-reverse md:static md:h-20 md:w-max md:bg-transparent fixed left-0 top-20 w-full h-max bg-slate-50 rounded-b-xl overflow-hidden transition-all duration-300 ease-in-out ${
           isOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
         }`}
       >
-        <ul className="flex items-center justify-center m-4 gap-4">
+        <ul className="flex items-center justify-center m-8 md:m-16 gap-8 md:gap-4">
           <li>
             {isConnected ? (
-              <Link href="/profile" onClick={toggle}>
+              <Link
+                href="/profile"
+                aria-label="aller sur son profil"
+                onClick={toggle}
+              >
                 <svg
                   className="group"
                   xmlns="http://www.w3.org/2000/svg"
@@ -146,7 +150,7 @@ export default function Header() {
           id="menu"
           className="flex flex-col items-center h-full space-y-8 text-slate-700 md:text-white py-8 md:mt-0 md:flex-row md:space-x-8"
         >
-          <ul className="space-y-16 text-center text-lg md:flex md:items-center md:space-y-0 md:space-x-8">
+          <ul className="space-y-8 text-center text-base md:text-lg md:flex md:items-center md:space-y-0 md:space-x-8">
             <li className="hover:text-lime-400 duration-300 ease-in-out">
               <Link
                 className="border-b-4 border-transparent"

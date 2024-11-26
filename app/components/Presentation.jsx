@@ -31,7 +31,7 @@ export default function Presentation() {
         </div>
       </div>
       <Link href="./circuit">
-        <Button title="Start" />
+        <Button title="Commencer" />
       </Link>
     </section>
   )

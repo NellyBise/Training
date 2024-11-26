@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 import Image from 'next/image'
-import step1 from '../src/2.jpg'
+import step1 from '../src/2.webp'
 import Button from './ui/Button'
 
 export default function Step1({
@@ -106,8 +106,9 @@ export default function Step1({
         className="md:w-1/2 rounded-lg"
         src={step1}
         alt=""
-        width={7999}
+        width={2000}
         height="auto"
+        priority
       />
     </section>
   )

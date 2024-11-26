@@ -94,8 +94,8 @@ export default function Profile() {
       <h2 className="text-3xl uppercase text-center mb-8">Mes circuits</h2>
       {trainings.length > 0 ? (
         <table className="border-2 border-black text-sm md: text-base">
-          <thead className="h-8">
-            <tr>
+          <thead className="h-10">
+            <tr className="bg-slate-700 text-white">
               <th className="px-2 border-[1px] border-black" scope="col">
                 Nom
               </th>
@@ -105,27 +105,36 @@ export default function Profile() {
               >
                 Description
               </th>
-              <th className="px-2 border-[1px] border-black" scope="col">
+              <th
+                className="px-2 border-[1px] border-black md:min-w-20"
+                scope="col"
+              >
                 Date
               </th>
-              <th className="px-2 border-[1px] border-black" scope="col">
+              <th
+                className="px-2 border-[1px] border-black md:min-w-20"
+                scope="col"
+              >
                 Voir PDF
               </th>
-              <th className="px-2 border-[1px] border-black" scope="col">
+              <th
+                className="px-2 border-[1px] border-black md:min-w-20"
+                scope="col"
+              >
                 Supprimer
               </th>
             </tr>
           </thead>
           <tbody>
             {trainings.map((training) => (
-              <tr className="min-h-12" key={training.id}>
+              <tr className="min-h-12 even:bg-slate-200" key={training.id}>
                 <th className="p-2 border-[1px] border-black" scope="row">
                   {training.title}
                 </th>
                 <td className="p-2 max-w-96 overflow-hidden border-[1px] border-black hidden md:table-cell">
                   {training.description}
                 </td>
-                <td className="p-2 border-[1px] border-black">
+                <td className="p-2 border-[1px] border-black" align="center">
                   {training.created_at
                     .substr(4, 6)
                     .split('-')
@@ -135,7 +144,7 @@ export default function Profile() {
                 </td>
                 <td
                   className="p-2 border-[1px] text-red-500 border-black"
-                  align="CENTER"
+                  align="center"
                 >
                   <GeneratePDF
                     orderedExercises={training.orderedExercises}
@@ -146,7 +155,7 @@ export default function Profile() {
                 </td>
                 <td
                   className="p-2 border-[1px] text-red-500 border-black"
-                  align="CENTER"
+                  align="center"
                 >
                   <button onClick={() => handleDelete(training.id)}>
                     <svg
