@@ -23,7 +23,7 @@ function LoginForm({ action }) {
     if (error) {
       setError(error.message)
     } else {
-      router.push('/profile')
+      router.push('/programmes')
     }
   }
 
@@ -52,7 +52,7 @@ function LoginForm({ action }) {
     const { data, error } = await supabaseAPI.auth.resetPasswordForEmail(
       email,
       {
-        redirectTo: 'https://trainup-rosy.vercel.app/reset',
+        redirectTo: 'https://trainup-rosy.vercel.app/réinitialisation',
       }
     )
 

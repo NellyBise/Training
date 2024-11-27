@@ -70,10 +70,12 @@ export default function Step3({ selectedExercises, onPrev }) {
   }
 
   return (
-    <section>
+    <article>
       <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
         <div className="flex flex-col items-center gap-8 bg-slate-50 py-12 px-8">
-          <p className="text-4xl uppercase font-bold">Step 3</p>
+          <p className="flex items-center justify-center text-3xl md:text-5xl rounded-full size-16 md:size-24 border-2 border-black">
+            3
+          </p>
           <h2 className="text-3xl uppercase text-center mb-8">
             Choisis l&rsquo;ordre
           </h2>
@@ -139,6 +141,6 @@ export default function Step3({ selectedExercises, onPrev }) {
           </div>
         </div>
       </DndContext>
-    </section>
+    </article>
   )
 }

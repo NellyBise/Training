@@ -94,7 +94,7 @@ export default function Header() {
           <li>
             {isConnected ? (
               <Link
-                href="/profile"
+                href="/programmes"
                 aria-label="aller sur son profil"
                 onClick={toggle}
               >
@@ -138,7 +138,7 @@ export default function Header() {
             ) : (
               <Link
                 className="bg-slate-700 text-white p-3 rounded w-max flex gap-4 items-center self-center duration-300 hover:bg-slate-600 disabled:text-slate-500 disabled:cursor-not-allowed disabled:bg-slate-100"
-                href="/login"
+                href="/connexion"
                 onClick={toggle}
               >
                 Se connecter
@@ -163,7 +163,7 @@ export default function Header() {
             <li className="hover:text-lime-400 duration-300 ease-in-out">
               <Link
                 className="border-b-4 border-transparent"
-                href="/circuit"
+                href="/creer-programme-entrainement"
                 onClick={toggle}
               >
                 Créer mon circuit

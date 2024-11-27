@@ -96,8 +96,10 @@ export default function Step2({
   }
 
   return (
-    <section className="flex flex-col items-center gap-8 bg-slate-50 py-12 px-8">
-      <p className="text-4xl uppercase font-bold">Step 2</p>
+    <article className="flex flex-col items-center gap-8 bg-slate-50 py-12 px-8">
+      <p className="flex items-center justify-center text-3xl md:text-5xl rounded-full size-16 md:size-24 border-2 border-black">
+        2
+      </p>
       <h2 className="text-3xl uppercase text-center mb-8">
         Choisis tes exercices
       </h2>
@@ -211,6 +213,6 @@ export default function Step2({
           condition={selectedExercises.length >= exerciseCount}
         />
       </div>
-    </section>
+    </article>
   )
 }

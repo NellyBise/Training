@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 import Image from 'next/image'
-import step1 from '../src/2.webp'
+import step1 from '../src/circuit-training.webp'
 import Button from './ui/Button'
 
 export default function Step1({
@@ -21,11 +21,13 @@ export default function Step1({
   }
 
   return (
-    <section className="flex flex-col md:flex-row items-center gap-8 bg-slate-50 py-12 px-8">
-      <article className="md:w-1/2 flex flex-col items-center gap-8">
-        <p className="text-4xl uppercase font-bold">Step 1</p>
+    <article className="flex flex-col md:flex-row items-center gap-8 bg-slate-50 py-12 px-8">
+      <div className="md:w-1/2 flex flex-col items-center gap-8">
+        <p className="flex items-center justify-center text-3xl md:text-5xl rounded-full size-16 md:size-24 border-2 border-black">
+          1
+        </p>
         <h2 className="text-3xl uppercase text-center mb-8">
-          Choisis le nombre d&rsquo;exercices
+          Choisis le nombre d&rsquo;exercices de ton programme
         </h2>
         <p className="flex flex-col gap-2">
           Conseil : Sélectionne le nombre d&rsquo;exercices selon le type
@@ -101,7 +103,7 @@ export default function Step1({
             }}
           />
         </div>
-      </article>
+      </div>
       <Image
         className="md:w-1/2 rounded-lg"
         src={step1}
@@ -110,6 +112,6 @@ export default function Step1({
         height="auto"
         priority
       />
-    </section>
+    </article>
   )
 }
