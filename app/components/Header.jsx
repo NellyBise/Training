@@ -86,11 +86,11 @@ export default function Header() {
       </a>
 
       <div
-        className={`z-[-1] min-h-screen absolute md:flex md:flex-row-reverse md:static md:h-20 md:w-max md:bg-transparent fixed left-0 top-20 w-full h-max bg-slate-50 rounded-b-xl overflow-hidden transition-all duration-300 ease-in-out ${
+        className={`z-[-1] min-h-screen absolute md:flex md:flex-row-reverse md:static md:min-h-20 md:h-20 md:w-max md:bg-transparent fixed left-0 top-20 w-full h-max bg-slate-50 rounded-b-xl overflow-hidden transition-all duration-300 ease-in-out ${
           isOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
         }`}
       >
-        <ul className="flex items-center justify-center m-8 md:m-16 gap-8 md:gap-4">
+        <ul className="flex items-center justify-center ml-8 mt-8 md:mt-0 md:ml-16 gap-8 md:gap-4">
           <li>
             {isConnected ? (
               <Link
