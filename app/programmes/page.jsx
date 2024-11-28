@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react'
 import { supabaseAPI } from '@/lib/supabase'
 import GeneratePDF from '../components/GeneratePDF'
-import Head from 'next/head'
 
 export default function Profile() {
   const [trainings, setTrainings] = useState([])
@@ -87,112 +86,103 @@ export default function Profile() {
   }
 
   return (
-    <>
-      <Head>
-        <title>Mes programmes d&rsquo;entraînement | Train Up</title>
-        <meta
-          name="description"
-          content="Accédez à tous tes programmes d’entraînement enregistrés sur Train Up. Gère tous tes circuits training."
-        />
-      </Head>
-      <section className="flex flex-col items-center gap-8 bg-slate-50 py-12 px-8">
-        <h1 className="text-4xl uppercase font-bold text-center">
-          {' '}
-          Tableau de Bord{' '}
-        </h1>
-        <h2 className="text-3xl uppercase text-center mb-8">Mes circuits</h2>
-        {trainings.length > 0 ? (
-          <table className="border-2 border-black text-sm md: text-base">
-            <thead className="h-10">
-              <tr className="bg-slate-700 text-white">
-                <th className="px-2 border-[1px] border-black" scope="col">
-                  Nom
+    <section className="flex flex-col items-center gap-8 bg-slate-50 py-12 px-8">
+      <h1 className="text-4xl uppercase font-bold text-center">
+        {' '}
+        Tableau de Bord{' '}
+      </h1>
+      <h2 className="text-3xl uppercase text-center mb-8">Mes circuits</h2>
+      {trainings.length > 0 ? (
+        <table className="border-2 border-black text-sm md: text-base">
+          <thead className="h-10">
+            <tr className="bg-slate-700 text-white">
+              <th className="px-2 border-[1px] border-black" scope="col">
+                Nom
+              </th>
+              <th
+                className="px-2 max-w-40 border-[1px] border-black hidden md:table-cell"
+                scope="col"
+              >
+                Description
+              </th>
+              <th
+                className="px-2 border-[1px] border-black md:min-w-20"
+                scope="col"
+              >
+                Date
+              </th>
+              <th
+                className="px-2 border-[1px] border-black md:min-w-20"
+                scope="col"
+              >
+                Voir PDF
+              </th>
+              <th
+                className="px-2 border-[1px] border-black md:min-w-20"
+                scope="col"
+              >
+                Supprimer
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {trainings.map((training) => (
+              <tr className="min-h-12 even:bg-slate-200" key={training.id}>
+                <th className="p-2 border-[1px] border-black" scope="row">
+                  {training.title}
                 </th>
-                <th
-                  className="px-2 max-w-40 border-[1px] border-black hidden md:table-cell"
-                  scope="col"
+                <td className="p-2 max-w-96 overflow-hidden border-[1px] border-black hidden md:table-cell">
+                  {training.description}
+                </td>
+                <td className="p-2 border-[1px] border-black" align="center">
+                  {training.created_at
+                    .substr(4, 6)
+                    .split('-')
+                    .reverse()
+                    .join('/')}
+                  {training.created_at.substr(2, 2)}
+                </td>
+                <td
+                  className="p-2 border-[1px] text-red-500 border-black"
+                  align="center"
                 >
-                  Description
-                </th>
-                <th
-                  className="px-2 border-[1px] border-black md:min-w-20"
-                  scope="col"
+                  <GeneratePDF
+                    orderedExercises={training.orderedExercises}
+                    title={training.title}
+                    description={training.description}
+                    type="profile"
+                  />
+                </td>
+                <td
+                  className="p-2 border-[1px] text-red-500 border-black"
+                  align="center"
                 >
-                  Date
-                </th>
-                <th
-                  className="px-2 border-[1px] border-black md:min-w-20"
-                  scope="col"
-                >
-                  Voir PDF
-                </th>
-                <th
-                  className="px-2 border-[1px] border-black md:min-w-20"
-                  scope="col"
-                >
-                  Supprimer
-                </th>
+                  <button onClick={() => handleDelete(training.id)}>
+                    <svg
+                      className="group"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="25"
+                      height="25"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        className="stroke-slate-700 group-hover:stroke-red-500 duration-300"
+                        fill="none"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M14 11v6m-4-6v6M6 7v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7M4 7h16M7 7l2-4h6l2 4"
+                      />
+                    </svg>
+                  </button>
+                </td>
               </tr>
-            </thead>
-            <tbody>
-              {trainings.map((training) => (
-                <tr className="min-h-12 even:bg-slate-200" key={training.id}>
-                  <th className="p-2 border-[1px] border-black" scope="row">
-                    {training.title}
-                  </th>
-                  <td className="p-2 max-w-96 overflow-hidden border-[1px] border-black hidden md:table-cell">
-                    {training.description}
-                  </td>
-                  <td className="p-2 border-[1px] border-black" align="center">
-                    {training.created_at
-                      .substr(4, 6)
-                      .split('-')
-                      .reverse()
-                      .join('/')}
-                    {training.created_at.substr(2, 2)}
-                  </td>
-                  <td
-                    className="p-2 border-[1px] text-red-500 border-black"
-                    align="center"
-                  >
-                    <GeneratePDF
-                      orderedExercises={training.orderedExercises}
-                      title={training.title}
-                      description={training.description}
-                      type="profile"
-                    />
-                  </td>
-                  <td
-                    className="p-2 border-[1px] text-red-500 border-black"
-                    align="center"
-                  >
-                    <button onClick={() => handleDelete(training.id)}>
-                      <svg
-                        className="group"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="25"
-                        height="25"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          className="stroke-slate-700 group-hover:stroke-red-500 duration-300"
-                          fill="none"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M14 11v6m-4-6v6M6 7v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7M4 7h16M7 7l2-4h6l2 4"
-                        />
-                      </svg>
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        ) : (
-          <p>Aucun training trouvé.</p>
-        )}
-      </section>
-    </>
+            ))}
+          </tbody>
+        </table>
+      ) : (
+        <p>Aucun training trouvé.</p>
+      )}
+    </section>
   )
 }

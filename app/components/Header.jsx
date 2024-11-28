@@ -130,7 +130,7 @@ export default function Header() {
           <li>
             {isConnected ? (
               <button
-                className="text-slate-700 md:text-white hover:text-lime-400 duration-300 ease-in-out"
+                className="text-slate-700 md:text-white hover:text-red-400 text-base md:text-lg duration-300 ease-in-out"
                 onClick={handleSignOut}
               >
                 Déconnexion

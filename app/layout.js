@@ -11,28 +11,25 @@ const poppins = Poppins({
   display: 'swap',
 })
 
-import Head from 'next/head'
+export const metadata = {
+  authors: [{ name: 'Nelly Bise', url: 'https://www.nelly-bise.fr' }],
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: "Train Up, crée ton programme d'entraînement personnalisé",
+    description:
+      "Découvre des programmes d'entraînement personnalisés pour atteindre tes objectifs à la maison ou en salle. Circuit training, exercices à la maison, conseils et astuces.",
+    url: 'https://www.train-up.fr',
+    image: 'https://www.train-up.fr/circuit-training.webp',
+    type: 'website',
+  },
+}
 
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
-      <Head>
-        <meta name="robots" content="index,follow" />
-        <meta
-          property="og:title"
-          content="Train Up, crée ton programme d'entraînement personnalisé"
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:description"
-          content="Découvre des programmes d’entraînement personnalisés pour atteindre tes objectifs à la maison ou en salle. Circuit training, exercices à la maison, conseils et astuces."
-        />
-        <meta
-          property="og:image"
-          content="http://www.train-up.fr/circuit-training.webp"
-        />
-        <meta property="og:url" content="http://www.train-up.fr" />
-      </Head>
       <body
         className={`${poppins.className} min-h-screen scroll-smooth flex flex-col`}
       >

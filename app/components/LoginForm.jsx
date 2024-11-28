@@ -52,7 +52,7 @@ function LoginForm({ action }) {
     const { data, error } = await supabaseAPI.auth.resetPasswordForEmail(
       email,
       {
-        redirectTo: 'https://trainup-rosy.vercel.app/réinitialisation',
+        redirectTo: 'https://www.train-up.fr/réinitialisation',
       }
     )
 
