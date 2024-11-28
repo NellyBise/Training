@@ -16,7 +16,7 @@ export default function Wizard() {
 
   return (
     <section className="bg-slate-50">
-      <h1 className="flex justify-center uppercase text-xl md:text-4xl font-bold pt-12">
+      <h1 className="flex justify-center text-center uppercase text-xl md:text-4xl font-bold pt-12  px-8">
         Conçois ton programme d’entraînement en quelques clics
       </h1>
       {step === 1 && (
