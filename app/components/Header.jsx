@@ -154,10 +154,10 @@ export default function Header() {
             <li className="hover:text-lime-400 duration-300 ease-in-out">
               <Link
                 className="border-b-4 border-transparent"
-                href="#"
+                href="/planifier-son-entrainement"
                 onClick={toggle}
               >
-                En savoir plus
+                Consulter le guide
               </Link>
             </li>
             <li className="hover:text-lime-400 duration-300 ease-in-out">

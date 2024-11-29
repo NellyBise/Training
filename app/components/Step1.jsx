@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import step1 from '../src/circuit-training.webp'
 import Button from './ui/Button'
+import Link from 'next/link'
 
 export default function Step1({
   onNext,
@@ -30,10 +31,15 @@ export default function Step1({
           Choisis le nombre d&rsquo;exercices de ton programme
         </h2>
         <p className="flex flex-col gap-2">
-          Conseil : Sélectionne le nombre d&rsquo;exercices selon le type
-          d&rsquo;activité que tu as prévu. Pour du circuit training, la
-          recommandation est de 9 ou 12 exercices.
-          <span className="text-blue-700">En savoir plus</span>
+          Sélectionne le nombre d&rsquo;exercices selon le type d&rsquo;activité
+          que tu as prévu. Pour du circuit training, la recommandation est de 9
+          ou 12 exercices.
+          <Link
+            href="/planifier-son-entrainement"
+            className="text-blue-700 underline decoration-transparent hover:decoration-inherit duration-300"
+          >
+            Conseils pour réussir ton programme d&rsquo;entraînement
+          </Link>
         </p>
 
         <div className="flex flex-col items-center gap-12 flex-wrap justify-center">
