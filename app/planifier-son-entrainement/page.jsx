@@ -15,34 +15,33 @@ export default function planifier() {
         image={circuit}
         altText=""
         content={[
-          <p>
+          <p key="1">
             Un circuit training est un programme d’entraînement composé d’une
             série d’exercices enchaînés avec peu ou pas de repos entre chaque.
             Il est souvent recommandé de structurer ses circuits avec 9 à 12
             exercices différents.
           </p>,
-          <p>
+          <p key="2">
             La durée de chaque exercice et du temps de repos peut varier selon
             ton niveau :
           </p>,
-          <ul className="list-disc list-inside pl-4">
+          <ul key="3" className="list-disc list-inside pl-4">
             <li>Débutant : 30 secondes d’effort pour 30 secondes de repos.</li>
             <li>
               Intermédiaire : 45 secondes d’effort pour 15 secondes de repos.
             </li>
             <li>Avancé : 55 secondes d’effort pour 5 secondes de repos.</li>
           </ul>,
-
-          <p>
+          <p key="4">
             Pour une séance efficace, vise une durée totale entre{' '}
             <span className="font-bold">30 et 60 minutes</span>, soit au moins
             trois répétitions complètes de ton circuit.
           </p>,
-          <p>
+          <p key="5">
             <span className="font-bold">Astuce :</span> Utilise une application
             de timer pour suivre facilement les temps d’effort et de repos.
           </p>,
-          <p>
+          <p key="6">
             Train Up est conçu pour t’accompagner dans la création de circuits
             sur mesure, mais il peut aussi être utilisé pour structurer tout
             type d’entraînement sportif, que ce soit du cardio, du renforcement
@@ -56,13 +55,13 @@ export default function planifier() {
         image={sport}
         altText=""
         content={[
-          <p>
+          <p key="1">
             Avec <span className="font-bold">Train Up</span>, accède à une
             bibliothèque variée d’exercices adaptés à ton niveau, que tu sois
             débutant ou expérimenté. Tu peux utiliser les filtres pour
             personnaliser ton entraînement en fonction de :
           </p>,
-          <ul className="list-disc list-inside pl-4">
+          <ul key="2" className="list-disc list-inside pl-4">
             <li>Ton niveau de difficulté.</li>
             <li>
               Le matériel à disposition (haltères, élastiques, aucun équipement,
@@ -72,7 +71,7 @@ export default function planifier() {
               Les muscles que tu souhaites cibler (jambes, dos, bras, abdos…).
             </li>
           </ul>,
-          <p>
+          <p key="3">
             Que tu sois chez toi ou dans une salle de sport, Train Up te permet
             de concevoir facilement un programme d’exercices adapté à tes
             objectifs.
@@ -85,12 +84,12 @@ export default function planifier() {
         image=""
         altText=""
         content={[
-          <p className="self-left pb-8">
+          <p key="1" className="self-left pb-8">
             Grâce à ces conseils, tu es prêt à planifier des séances
             d’entraînement efficaces. Commence ton programme dès aujourd’hui
             avec Train Up et prends le contrôle de ta routine sportive !
           </p>,
-          <Link href="./creer-programme-entrainement">
+          <Link key="2" href="./creer-programme-entrainement">
             <Button title="Crée ton circuit" />
           </Link>,
         ]}
