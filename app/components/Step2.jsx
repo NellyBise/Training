@@ -97,10 +97,10 @@ export default function Step2({
 
   return (
     <article className="flex flex-col items-center gap-8 bg-slate-50 py-12 px-8">
-      <p className="flex items-center justify-center text-3xl md:text-5xl rounded-full size-16 md:size-24 border-2 border-black">
+      <p className="flex items-center justify-center text-3xl md:text-4xl rounded-full size-16 md:size-20 border-2 border-black">
         2
       </p>
-      <h2 className="text-3xl uppercase text-center mb-8">
+      <h2 className="text-xl md:text-3xl uppercase text-center mb-8">
         Choisis tes exercices
       </h2>
 

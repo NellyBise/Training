@@ -31,7 +31,7 @@ Installe les dépendances :
 
 ```
 npm install
-Crée un fichier .env.local pour les variables d’environnement (décris rapidement ce qu'il doit contenir si pertinent).
+Crée un fichier .env.local pour les variables d’environnement.
 ```
 
 Lance l’application :
@@ -44,7 +44,6 @@ Accède à l’application sur http://localhost:3000.
 ## Démo
 
 Lien vers l’application : https://train-up.fr
-Tu peux aussi intégrer une capture d'écran ou une vidéo GIF montrant l'application en action.
 
 ## Crédits
 

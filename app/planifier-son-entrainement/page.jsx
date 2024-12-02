@@ -1,18 +1,17 @@
 import Button from '../components/ui/Button'
 import Link from 'next/link'
 import Image from 'next/image'
-import entrainement from '../src/entrainement-sportif.jpg'
 import circuit from '../src/circuit-training-maison.jpg'
 import sport from '../src/sport-sans-materiel.jpg'
 
 export default function planifier() {
   return (
-    <section className="bg-slate-50 p-8 flex flex-col gap-12">
+    <section className="bg-slate-50 p-8 flex flex-col gap-6 md:gap-20">
       <h1 className="uppercase flex justify-center text-center text-3xl md:text-5xl py-8 font-bold">
         Planifie ton entraînement : conseils et astuces pour un circuit efficace
       </h1>
       <article className="flex flex-col gap-8 md:flex-row">
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col md:w-2/3 gap-3">
           <h2 className="uppercase flex justify-center text-center text-2xl md:text-4xl py-8 font-bold">
             Qu’est-ce qu’un circuit training ?
           </h2>
@@ -52,7 +51,7 @@ export default function planifier() {
         <Image
           src={circuit}
           alt=""
-          className="w-1/3 object-cover mx-auto my-4 rounded"
+          className="md:w-1/3 object-cover mx-auto my-4 rounded"
           width={6000}
           height="auto"
         />
@@ -61,11 +60,11 @@ export default function planifier() {
         <Image
           src={sport}
           alt=""
-          className="w-1/3 object-cover mx-auto my-4 rounded"
+          className="md:w-1/3 object-cover mx-auto my-4 rounded"
           width={6000}
           height="auto"
         />
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col md:w-2/3 gap-3">
           <h2 className="uppercase flex justify-center text-center text-2xl md:text-4xl py-8 font-bold">
             Fais du sport à la maison ou en salle
           </h2>
@@ -96,7 +95,7 @@ export default function planifier() {
         <h2 className="uppercase flex justify-center text-center text-2xl md:text-4xl py-8 font-bold">
           Il est temps de passer à l’action !
         </h2>
-        <p className="self-left">
+        <p className="self-left pb-8">
           Grâce à ces conseils, tu es prêt à planifier des séances
           d’entraînement efficaces. Commence ton programme dès aujourd’hui avec
           Train Up et prends le contrôle de ta routine sportive !
