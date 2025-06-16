@@ -20,7 +20,7 @@
     "@dnd-kit/sortable": "^8.0.0",
     "@graphql-tools/mock": "^9.0.4",
     "@graphql-tools/schema": "^10.0.6",
-    "@supabase/supabase-js": "^2.45.4",
+    "@supabase/supabase-js": "^2.50.0",
     "apollo-server-micro": "^3.13.0",
     "dotenv": "^16.4.5",
     "graphql": "^16.9.0",
